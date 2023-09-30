@@ -11,23 +11,20 @@ module.exports = grammar({
 
     extras: $ => [
         /\s/,
-        $._inline_comment,
-        $._block_comment,
+        $.comment,
     ],
 
     rules: {
         source_file: $ => $._value,
 
-        _inline_comment: $ => seq(
-            "//",
-            repeat(/./),
-            "\n",
-        ),
-        _block_comment: $ => seq(
-            "/*",
-            repeat(/./),
-            "*/",
-        ),
+        comment: $ => token(choice(
+            seq('//', /.*/),
+            seq(
+                '/*',
+                /[^*]*\*+([^/*][^*]*\*+)*/,
+                '/'
+            )
+        )),
 
         identifier: $ => {
             const identifierStart = choice(
@@ -77,10 +74,18 @@ module.exports = grammar({
                 seq(".", /[0-9]+/, optional(exponent)),
                 seq(/[0-9]+/, optional(exponent)),
             );
-            const hex_literal = /0[xX][A-Fa-f0-9]+/;
+
+            // Note - binary and octal literals are unsupported, but tree-sitter-json
+            // parses them, so eh.
+            const binary_literal = /0[bb][0-1]+/;
+            const octal_literal = /0[oO][0-7]+/;
+            const hex_literal = /0[xX][0-9A-Fa-f]+/;
+
             const number_literal = choice(
                 "Infinity",
                 "Nan",
+                binary_literal,
+                octal_literal,
                 hex_literal,
                 decimal_literal,
             );
