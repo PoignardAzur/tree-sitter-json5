@@ -1,0 +1,82 @@
+======
+Number
+======
+
+0
+
+---
+
+(source_file
+    (number))
+
+
+======
+Hexadecimal
+======
+
+0x1F
+
+---
+
+(source_file
+    (number))
+
+
+======
+Float
+======
+
+0.32
+
+---
+
+(source_file
+    (number))
+
+
+======
+Leading dot
+======
+
+.120
+
+---
+
+(source_file
+    (number))
+
+
+======
+Exponent
+======
+
+123e+345
+
+---
+
+(source_file
+    (number))
+
+
+======
+Dot with exponent
+======
+
+1.23e-345
+
+---
+
+(source_file
+    (number))
+
+======
+Leading dot with exponent
+======
+
+.123e345
+
+---
+
+(source_file
+    (number))
+

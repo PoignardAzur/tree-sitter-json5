@@ -1,0 +1,31 @@
+{
+  "name": "tree-sitter-json5",
+  "version": "0.1.0",
+  "description": "A learning exercise, trying to create a tree-sitter grammar for the JSON5 language",
+  "type": "commonjs",
+  "main": "bindings/node",
+  "scripts": {
+    "test": "tree-sitter test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PoignardAzur/tree-sitter-json5.git"
+  },
+  "keywords": [
+    "tree-sitter",
+    "json5",
+    "parser"
+  ],
+  "author": "Olivier FAURE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PoignardAzur/tree-sitter-json5/issues"
+  },
+  "homepage": "https://github.com/PoignardAzur/tree-sitter-json5#readme",
+  "dependencies": {
+    "nan": "^2.18.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.8"
+  }
+}

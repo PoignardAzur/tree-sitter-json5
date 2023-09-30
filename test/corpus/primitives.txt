@@ -1,0 +1,108 @@
+====
+Null
+====
+
+null
+
+---
+
+(source_file
+    (null))
+
+
+====
+True
+====
+
+true
+
+---
+
+(source_file
+    (boolean))
+
+
+=====
+False
+=====
+
+false
+
+---
+
+(source_file
+    (boolean))
+
+
+======
+String
+======
+
+"Hello world"
+
+---
+
+(source_file
+    (string))
+
+
+======
+Number
+======
+
+0
+
+---
+
+(source_file
+    (number))
+
+
+============
+Empty object
+============
+
+{}
+
+---
+
+(source_file
+    (object))
+
+
+===========
+Empty array
+===========
+
+[]
+
+---
+
+(source_file
+    (array))
+
+==========
+Full array
+==========
+
+[
+    null,
+    true,
+    false,
+    "hello",
+    0,
+    {},
+    [],
+]
+
+---
+
+(source_file
+    (array
+        (null)
+        (boolean)
+        (boolean)
+        (string)
+        (number)
+        (object)
+        (array)))

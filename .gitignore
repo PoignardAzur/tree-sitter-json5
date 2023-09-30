@@ -1,3 +1,7 @@
+# Tree sitter build files
+bindings/
+src/
+
 # Logs
 logs
 *.log
